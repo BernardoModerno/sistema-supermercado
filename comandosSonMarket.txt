@@ -1,3 +1,6 @@
 dotnet new mvc --auth Individual --use-local-db
 **dotnet add package Pomelo.EntityFrameworkCore.MySql --version 2.2.0
 dotnet restore
+Primeiro para se corrigir o Bug do Identity e MySql deve-se excluir a pasta migration e rodar esse comando para o identity reconhecer o MySql
+dotnet ef migrations add CreateIdentitySchema
+dotnet ef database update
