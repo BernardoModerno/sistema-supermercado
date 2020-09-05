@@ -1,5 +1,7 @@
-namespace sonmarket.Models {
-    public class Promocao {
+namespace sonmarket.Models
+{
+    public class Promocao
+    {
         public int Id { get; set; }
         public string Nome { get; set; }
         public Produto Produto { get; set; }
