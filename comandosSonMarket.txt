@@ -4,3 +4,5 @@ dotnet restore
 Primeiro para se corrigir o Bug do Identity e MySql deve-se excluir a pasta migration e rodar esse comando para o identity reconhecer o MySql
 dotnet ef migrations add CreateIdentitySchema
 dotnet ef database update
+dotnet ef migrations add CreateSonMarketSchema
+dotnet ef database update
