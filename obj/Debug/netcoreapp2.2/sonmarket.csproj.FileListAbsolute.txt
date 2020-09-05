@@ -31,3 +31,4 @@ C:\sonmarket\obj\Debug\netcoreapp2.2\sonmarket.dll
 C:\sonmarket\obj\Debug\netcoreapp2.2\sonmarket.pdb
 C:\sonmarket\obj\Debug\netcoreapp2.2\sonmarket.csproj.CopyComplete
 C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutAdmin.g.cshtml.cs
+C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\Index.g.cshtml.cs

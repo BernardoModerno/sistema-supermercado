@@ -1912,6 +1912,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\sonmarket\\Views\\Gestao\\index.cshtml",
+      "TargetPath": "Views\\Gestao\\index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\sonmarket\\Views\\Shared\\_LoginPartial.cshtml",
       "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
       "FileKind": "mvc"
