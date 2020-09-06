@@ -6,3 +6,5 @@ dotnet ef migrations add CreateIdentitySchema
 dotnet ef database update
 dotnet ef migrations add CreateSonMarketSchema
 dotnet ef database update
+dotnet ef migrations add AtualizarCategoria
+dotnet ef database update
