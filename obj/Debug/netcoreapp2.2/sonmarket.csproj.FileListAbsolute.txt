@@ -34,3 +34,5 @@ C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutAdmin.g.cshtml.cs
 C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\Index.g.cshtml.cs
 C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\Categorias.g.cshtml.cs
 C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\NovaCategoria.g.cshtml.cs
+C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\Fornecedores.g.cshtml.cs
+C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\NovoFornecedor.g.cshtml.cs
