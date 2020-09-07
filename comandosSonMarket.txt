@@ -8,3 +8,5 @@ dotnet ef migrations add CreateSonMarketSchema
 dotnet ef database update
 dotnet ef migrations add AtualizarCategoria
 dotnet ef database update
+dotnet ef migrations add AtualizandoFornecedor
+dotnet ef database update
