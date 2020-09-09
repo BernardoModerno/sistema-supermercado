@@ -1,15 +1,21 @@
 using System;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using sonmarket.Data;
 
 namespace sonmarket.Controllers
 {
     public class GestaoController : Controller
     {
+        private readonly ApplicationDbContext database;
+        public GestaoController(ApplicationDbContext database)
+        {
+            this.database = database;
+        }
         public IActionResult Index()
         {
             return View();
         }
-
         public IActionResult Categorias()
         {
             return View();
@@ -24,6 +30,16 @@ namespace sonmarket.Controllers
         }
         public IActionResult NovoFornecedor()
         {
+            return View();
+        }
+        public IActionResult Produtos()
+        {
+            return View();
+        }
+        public IActionResult NovoProduto()
+        {
+            ViewBag.Categorias = database.Categorias.ToList();
+            ViewBag.Fornecedores = database.Fornecedores.ToList();
             return View();
         }
     }
