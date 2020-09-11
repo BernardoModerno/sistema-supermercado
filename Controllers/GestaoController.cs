@@ -18,7 +18,8 @@ namespace sonmarket.Controllers
         }
         public IActionResult Categorias()
         {
-            return View();
+            var categorias = database.Categorias.ToList();
+            return View(categorias);
         }
         public IActionResult NovaCategoria()
         {
