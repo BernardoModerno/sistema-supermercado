@@ -43,5 +43,16 @@ namespace sonmarket.Controllers
                 return View("../Gestao/EditarCategoria");
             }
         }
+        [HttpPost]
+        public IActionResult Deletar(int id)
+        {
+            if (id > 0)
+            {
+                var categoria = database.Categorias.First(cat => cat.Id == id);
+                categoria.Status = false;
+                database.SaveChanges();
+            }
+            return RedirectToAction("Categorias", "Gestao");
+        }
     }
 }

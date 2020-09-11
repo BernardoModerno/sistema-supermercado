@@ -22,12 +22,16 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(var categoria in Model)
-        {
+        @foreach(var categoria in Model){
             <tr>
                 <td>@categoria.Id</td>
                 <td>@categoria.Nome</td>
-                <td><a class="btn btn-primary" href="/Gestao/EditarCategoria/@categoria.Id">Editar</a> <button class="btn btn-danger">Deletar</button></td>
+                <td><a class="btn btn-primary" href="/Gestao/EditarCategoria/@categoria.Id">Editar</a>  
+                <form asp-action="Deletar" asp-controller="Categorias" style="display: inline;">
+                    <input type="hidden" name="id" id="id" value="@categoria.Id">
+                    <button class="btn btn-danger">Deletar</button>
+                </form>
+                </td>
             </tr>
         }
     </tbody>

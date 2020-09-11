@@ -19,7 +19,7 @@ namespace sonmarket.Controllers
         }
         public IActionResult Categorias()
         {
-            var categorias = database.Categorias.ToList();
+            var categorias = database.Categorias.Where(cat => cat.Status == true).ToList();
             return View(categorias);
         }
         public IActionResult NovaCategoria()
