@@ -36,11 +36,23 @@ namespace sonmarket.Controllers
         }
         public IActionResult Fornecedores()
         {
-            return View();
+            var fornecedores = database.Fornecedores.Where(forne => forne.Status == true).ToList();
+            return View(fornecedores);
         }
         public IActionResult NovoFornecedor()
         {
             return View();
+        }
+
+        public IActionResult EditarFornecedor(int id)
+        {
+            var fornecedor = database.Fornecedores.First(forne => forne.Id == id);
+            FornecedorDTO fornecedorView = new FornecedorDTO();
+            fornecedorView.Id = fornecedor.Id;
+            fornecedorView.Nome = fornecedor.Nome;
+            fornecedorView.Email = fornecedor.Email;
+            fornecedorView.Telefone = fornecedor.Telefone;
+            return View(fornecedorView);
         }
         public IActionResult Produtos()
         {
