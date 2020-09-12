@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using sonmarket.Data;
 using sonmarket.DTO;
@@ -25,6 +26,21 @@ namespace sonmarket.Controllers
                 return RedirectToAction("Categorias", "Gestao");
             }else{
                 return View("../Gestao/NovaCategoria");
+            }
+        }
+        [HttpPost]
+        public IActionResult Atualizar(CategoriaDTO categoriaTemporaria)
+        {
+            if (ModelState.IsValid)
+            {
+                var categoria = database.Categorias.First(cat => cat.Id == categoriaTemporaria.Id);
+                categoria.Nome = categoriaTemporaria.Nome;
+                database.SaveChanges();
+                return RedirectToAction("Categorias", "Gestao");
+            }
+            else
+            {
+                return View("../Gestao/EditarCategoria");
             }
         }
     }
