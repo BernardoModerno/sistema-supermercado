@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using sonmarket.Data;
+using sonmarket.DTO;
 
 namespace sonmarket.Controllers
 {
@@ -24,6 +25,14 @@ namespace sonmarket.Controllers
         public IActionResult NovaCategoria()
         {
             return View();
+        }
+        public IActionResult EditarCategoria(int id)
+        {
+            var categoria = database.Categorias.First(cat => cat.Id == id);
+            CategoriaDTO categoriaView = new CategoriaDTO();
+            categoriaView.Id = categoria.Id;
+            categoriaView.Nome = categoria.Nome;
+            return View(categoriaView);
         }
         public IActionResult Fornecedores()
         {

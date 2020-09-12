@@ -38,3 +38,4 @@ C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\Fornecedores.g.cshtml.cs
 C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\NovoFornecedor.g.cshtml.cs
 C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\NovoProduto.g.cshtml.cs
 C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\Produtos.g.cshtml.cs
+C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\EditarCategoria.g.cshtml.cs
