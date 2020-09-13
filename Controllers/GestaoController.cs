@@ -46,7 +46,7 @@ namespace sonmarket.Controllers {
             return View (fornecedorView);
         }
         public IActionResult Produtos () {
-            var produtos = database.Produtos.Include (p => p.Categoria).Include (p => p.Fornecedor).ToList ();
+            var produtos = database.Produtos.Include (p => p.Categoria).Include (p => p.Fornecedor).Where (p => p.Status == true).ToList ();
             return View (produtos);
         }
         public IActionResult NovoProduto () {

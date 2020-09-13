@@ -49,6 +49,14 @@ namespace sonmarket.Controllers {
                 return RedirectToAction ("Produtos", "Gestao");
             }
         }
+        public IActionResult Deletar (int id) {
+            if (id > 0) {
+                var produto = database.Produtos.First (prod => prod.Id == id);
+                produto.Status = false;
+                database.SaveChanges ();
+            }
+            return RedirectToAction ("Produtos", "Gestao");
+        }
 
     }
 }

@@ -45,8 +45,8 @@
                 </td>
                 <td>
                 <a class="btn btn-primary" href="/Gestao/EditarProduto/@produto.Id">Editar</a>  
-                <form style="display: inline;">
-                    <input type="hidden" name="id" id="id">
+                <form style="display: inline;" asp-controller="Produtos" asp-action="Deletar">
+                    <input type="hidden" name="id" id="id" value="@produto.Id">
                     <button class="btn btn-danger">Deletar</button>
                 </form>
                 </td>
