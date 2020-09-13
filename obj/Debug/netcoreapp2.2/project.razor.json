@@ -1942,6 +1942,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\sonmarket\\Views\\Gestao\\EditarProduto.cshtml",
+      "TargetPath": "Views\\Gestao\\EditarProduto.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\sonmarket\\Views\\Gestao\\EditarFornecedor.cshtml",
       "TargetPath": "Views\\Gestao\\EditarFornecedor.cshtml",
       "FileKind": "mvc"
