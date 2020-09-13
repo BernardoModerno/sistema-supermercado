@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using sonmarket.Data;
 using sonmarket.DTO;
 
@@ -56,7 +57,8 @@ namespace sonmarket.Controllers
         }
         public IActionResult Produtos()
         {
-            return View();
+            var produtos = database.Produtos.Include(p => p.Categoria).Include(p => p.Fornecedor).ToList();
+            return View(produtos);
         }
         public IActionResult NovoProduto()
         {
