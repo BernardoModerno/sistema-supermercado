@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\sonmarket\\sonmarket.csproj": {}
+    "c:\\sonmarket\\sonmarket.csproj": {}
   },
   "projects": {
-    "C:\\sonmarket\\sonmarket.csproj": {
+    "c:\\sonmarket\\sonmarket.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\sonmarket\\sonmarket.csproj",
+        "projectUniqueName": "c:\\sonmarket\\sonmarket.csproj",
         "projectName": "sonmarket",
-        "projectPath": "C:\\sonmarket\\sonmarket.csproj",
+        "projectPath": "c:\\sonmarket\\sonmarket.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\sonmarket\\obj\\",
+        "outputPath": "c:\\sonmarket\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
