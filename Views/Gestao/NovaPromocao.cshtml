@@ -4,7 +4,7 @@
 }
 <h3>Nova Promoção</h3>
 <hr>
-<form>
+<form method="POST" asp-controller="Promocoes" asp-action="Salvar">
     <input type="hidden" asp-for="Id" value="0">
     <label asp-for="Nome">Nome</label>
     <input type="text" asp-for="Nome" class="form-control" placeholder="Nome da promoção">
