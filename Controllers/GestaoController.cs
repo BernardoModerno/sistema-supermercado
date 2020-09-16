@@ -68,5 +68,15 @@ namespace sonmarket.Controllers {
             ViewBag.Fornecedores = database.Fornecedores.ToList ();
             return View (produtoView);
         }
+        public IActionResult Promocoes()
+        {
+            var promocoes = database.Promocoes.Include(p => p.Produto).Where(i => i.Status == true).ToList();
+            return View(promocoes);
+        }
+        public IActionResult NovaPromocao()
+        {
+            ViewBag.Produtos = database.Produtos.ToList();
+            return View();
+        }
     }
 }

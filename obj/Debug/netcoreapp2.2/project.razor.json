@@ -1927,6 +1927,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\sonmarket\\Views\\Gestao\\Promocoes.cshtml",
+      "TargetPath": "Views\\Gestao\\Promocoes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\sonmarket\\Views\\Gestao\\Fornecedores.cshtml",
       "TargetPath": "Views\\Gestao\\Fornecedores.cshtml",
       "FileKind": "mvc"
@@ -1934,6 +1939,11 @@
     {
       "FilePath": "c:\\sonmarket\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\sonmarket\\Views\\Gestao\\NovaPromocao.cshtml",
+      "TargetPath": "Views\\Gestao\\NovaPromocao.cshtml",
       "FileKind": "mvc"
     },
     {

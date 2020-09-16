@@ -41,3 +41,5 @@ C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\Produtos.g.cshtml.cs
 C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\EditarCategoria.g.cshtml.cs
 C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\EditarFornecedor.g.cshtml.cs
 C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\EditarProduto.g.cshtml.cs
+C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\NovaPromocao.g.cshtml.cs
+C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\Promocoes.g.cshtml.cs
