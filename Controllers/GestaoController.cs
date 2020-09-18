@@ -78,5 +78,16 @@ namespace sonmarket.Controllers {
             ViewBag.Produtos = database.Produtos.ToList();
             return View();
         }
+        public IActionResult EditarPromocao(int id)
+        {
+            var promocao = database.Promocoes.Include(p => p.Produto).First(p => p.Id == id);
+            PromocaoDTO promo = new PromocaoDTO();
+            promo.Id = promocao.Id;
+            promo.Nome = promocao.Nome;
+            promo.Porcentagem = promocao.Porcentagem;
+            promo.ProdutoID = promocao.Produto.Id;
+            ViewBag.Produtos = database.Produtos.ToList();
+            return View(promo);
+        }
     }
 }

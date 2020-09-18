@@ -1877,6 +1877,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\sonmarket\\Views\\Gestao\\EditarPromocao.cshtml",
+      "TargetPath": "Views\\Gestao\\EditarPromocao.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\sonmarket\\Views\\Gestao\\NovoProduto.cshtml",
       "TargetPath": "Views\\Gestao\\NovoProduto.cshtml",
       "FileKind": "mvc"
