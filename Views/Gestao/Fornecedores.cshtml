@@ -4,8 +4,23 @@
 }
 <script>
     $(document).ready( function () {
-    $('#fornecedores').DataTable();
-} );
+        $('#fornecedores').DataTable({
+            "info" : false,
+            "language": {
+                "lengthMenu": "Mostrando _MENU_ registros por página",
+                "zeroRecords": "Desculpa, Nada encontrado.",
+                "info": "Mostando página _PAGE_ de _PAGES_",
+                "infoEmpty": "Nenhum registro disponível",
+                "search":         "Buscar:",
+                "paginate": {
+                    "first":      "Primeiro",
+                    "last":       "Último",
+                    "next":       "Próximo",
+                    "previous":   "Anterior"
+                }
+            }
+        });
+    });
 </script>
 
 <h2>Fornecedores</h2>

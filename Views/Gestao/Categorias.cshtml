@@ -9,8 +9,23 @@
 
 <script>
     $(document).ready( function () {
-    $('#categorias').DataTable();
-} );
+        $('#categorias').DataTable({
+            "info" : false,
+            "language": {
+                "lengthMenu": "Mostrando _MENU_ registros por página",
+                "zeroRecords": "Desculpa, Nada encontrado.",
+                "info": "Mostando página _PAGE_ de _PAGES_",
+                "infoEmpty": "Nenhum registro disponível",
+                "search":         "Buscar:",
+                "paginate": {
+                    "first":      "Primeiro",
+                    "last":       "Último",
+                    "next":       "Próximo",
+                    "previous":   "Anterior"
+                }
+            }
+        });
+    });
 </script>
 
 <table id="categorias" class="table table-striped table-bordered">

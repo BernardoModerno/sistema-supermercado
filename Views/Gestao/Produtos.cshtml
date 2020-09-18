@@ -8,8 +8,23 @@
 <hr/>
 <script>
     $(document).ready( function () {
-    $('#produtos').DataTable();
-} );
+        $('#produtos').DataTable({
+            "info" : false,
+            "language": {
+                "lengthMenu": "Mostrando _MENU_ registros por página",
+                "zeroRecords": "Desculpa, Nada encontrado.",
+                "info": "Mostando página _PAGE_ de _PAGES_",
+                "infoEmpty": "Nenhum registro disponível",
+                "search":         "Buscar:",
+                "paginate": {
+                    "first":      "Primeiro",
+                    "last":       "Último",
+                    "next":       "Próximo",
+                    "previous":   "Anterior"
+                }
+            }
+        });
+    });
 </script>
 
 <table id="produtos" class="table table-striped table-bordered">
