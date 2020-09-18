@@ -33,6 +33,23 @@ namespace sonmarket.Controllers
                 return View("../Gestao/NovaPromocao");
             }
         }
+        [HttpPost]
+        public IActionResult Atualizar(PromocaoDTO promocaoTemporaria)
+        {
+            if (ModelState.IsValid)
+            {
+                var promocao = database.Promocoes.First(p => p.Id == promocaoTemporaria.Id);
+                promocao.Nome = promocaoTemporaria.Nome;
+                promocao.Porcentagem = promocaoTemporaria.Porcentagem;
+                promocao.Produto = database.Produtos.First(prod => prod.Id == promocaoTemporaria.ProdutoID);
+                database.SaveChanges();
+                return RedirectToAction("Promocoes", "Gestao");
+            }
+            else
+            {
+                return RedirectToAction("Promocoes", "Gestao");
+            }
+        }
         
     }
 }
