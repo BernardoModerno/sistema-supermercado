@@ -50,6 +50,16 @@ namespace sonmarket.Controllers
                 return RedirectToAction("Promocoes", "Gestao");
             }
         }
+        public IActionResult Deletar(int id)
+        {
+            if (id > 0)
+            {
+                var promocao = database.Promocoes.First(p => p.Id == id);
+                promocao.Status = false;
+                database.SaveChanges();
+            }
+            return RedirectToAction("Promocoes", "Gestao");
+        }
         
     }
 }
