@@ -1,8 +1,10 @@
-var enderecoProduto = "https://localhost:5001/Produtos/Produto/1"
+var enderecoProduto = "https://localhost:5001/Produtos/Produto/"
 
 
 $("#pesquisar").click(function() {
-    $.post(enderecoProduto, function(dados, status){
+    var codProduto = $("#codProduto").val();
+    var enderecoTemporario = enderecoProduto+codProduto;
+    $.post(enderecoTemporario, function(dados, status){
         alert("Dados: " + dados + " Status: " + status);
     });
 });
