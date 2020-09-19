@@ -57,6 +57,11 @@ namespace sonmarket.Controllers {
             }
             return RedirectToAction ("Produtos", "Gestao");
         }
+        [HttpPost]
+        public IActionResult Produto(int id)
+        {
+            return Json("Olá mundo, requisição feita com sucesso");
+        }
 
     }
 }
