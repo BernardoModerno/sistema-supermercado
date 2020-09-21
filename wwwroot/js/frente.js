@@ -10,6 +10,25 @@ function preencherFormulario(dadosProduto) {
     $("#campoPreco").val(dadosProduto.precoDeVenda);
 }
 
+function zerarFormulario() {
+    $("#campoNome").val("");
+    $("#campoCategoria").val("");
+    $("#campoFornecedor").val("");
+    $("#campoPreco").val("");
+    $("#campoQuantidade").val("");
+}
+
+$("#produtoForm").on("submit", function (event) {
+    event.preventDefault();
+    var produtoParaTabela = produto;
+    var qtd = $("#campoQuantidade").val();
+
+    console.log(produtoParaTabela);
+    console.log(qtd);
+    //var produto = undefined;
+    zerarFormulario();
+});
+
 
 /*Ajax*/
 $("#pesquisar").click(function() {
@@ -19,7 +38,6 @@ $("#pesquisar").click(function() {
         
             produto = dados;
             preencherFormulario(produto);
-            console.log(produto);
         
     }).fail(function(){
         alert("Produto inválido");
