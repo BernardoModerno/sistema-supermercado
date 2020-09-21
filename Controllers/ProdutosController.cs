@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using sonmarket.Data;
 using sonmarket.DTO;
 using sonmarket.Models;
@@ -60,7 +61,24 @@ namespace sonmarket.Controllers {
         [HttpPost]
         public IActionResult Produto(int id)
         {
-            return Json("Olá mundo, requisição feita com sucesso");
+            if(id > 0)
+            {
+                var produto = database.Produtos.Where(p => p.Status == true).Include(p => p.Categoria).Include(p => p.Fornecedor).First(p => p.Id == id);
+                if(produto != null)
+                {
+                    Response.StatusCode = 200;
+                    return Json(produto);
+                }else
+                {
+                    Response.StatusCode = 404;
+                    return Json(null);
+                }
+            }else
+            {
+                Response.StatusCode = 404;
+                return Json(null);
+            }
+            
         }
 
     }
