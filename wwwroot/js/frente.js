@@ -26,8 +26,21 @@ $("#produtoForm").on("submit", function (event) {
     console.log(produtoParaTabela);
     console.log(qtd);
     //var produto = undefined;
+    adicionarNaTabela(produtoParaTabela, qtd);
     zerarFormulario();
 });
+
+function adicionarNaTabela(p,q) {
+    $("#compras").append(`<tr>
+        <td>${p.id}</td>
+        <td>${p.nome}</td>
+        <td>${q}</td>
+        <td>R$ ${p.precoDeVenda}</td>
+        <td>${p.medicao}</td>
+        <td>R$ ${p.precoDeVenda * q}</td>
+        <td><button class='btn btn-danger'>Remover</button></td>
+    </tr>`);
+}
 
 
 /*Ajax*/
@@ -37,6 +50,26 @@ $("#pesquisar").click(function() {
     $.post(enderecoTemporario, function(dados, status){
         
             produto = dados;
+
+            var med = "";
+
+            switch (produto.medicao) {
+                case 0:
+                    med = "L";
+                    break;
+                case 1:
+                    med = "K";
+                    break;
+                case 2:
+                    med = "U";
+                    break;
+                default:
+                    med = "U";
+                    break;
+            }
+
+            produto.medicao = med;
+
             preencherFormulario(produto);
         
     }).fail(function(){
