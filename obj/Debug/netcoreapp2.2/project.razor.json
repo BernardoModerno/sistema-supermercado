@@ -1927,6 +1927,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\sonmarket\\Views\\Gestao\\Estoque.cshtml",
+      "TargetPath": "Views\\Gestao\\Estoque.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\sonmarket\\Views\\Gestao\\Categorias.cshtml",
       "TargetPath": "Views\\Gestao\\Categorias.cshtml",
       "FileKind": "mvc"
@@ -1974,6 +1979,11 @@
     {
       "FilePath": "c:\\sonmarket\\Views\\Shared\\_LoginPartial.cshtml",
       "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\sonmarket\\Views\\Gestao\\NovoEstoque.cshtml",
+      "TargetPath": "Views\\Gestao\\NovoEstoque.cshtml",
       "FileKind": "mvc"
     },
     {

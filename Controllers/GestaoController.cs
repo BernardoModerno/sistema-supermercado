@@ -89,5 +89,21 @@ namespace sonmarket.Controllers {
             ViewBag.Produtos = database.Produtos.ToList();
             return View(promo);
         }
+
+        public IActionResult Estoque()
+        {
+            return View();
+        }
+
+        public IActionResult NovoEstoque()
+        {
+            ViewBag.Produtos = database.Produtos.ToList();
+            return View();
+        }
+
+        public IActionResult EditarEstoque()
+        {
+            return Content("");
+        }
     }
 }
