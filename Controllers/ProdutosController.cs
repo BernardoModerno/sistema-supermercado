@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -14,23 +15,27 @@ namespace sonmarket.Controllers {
         }
 
         [HttpPost]
-        public IActionResult Salvar (ProdutoDTO produtoTemporario) {
-            if (ModelState.IsValid) {
-                Produto produto = new Produto ();
+        public IActionResult Salvar(ProdutoDTO produtoTemporario)
+        {
+            if (ModelState.IsValid)
+            {
+                Produto produto = new Produto();
                 produto.Nome = produtoTemporario.Nome;
-                produto.Categoria = database.Categorias.First (categoria => categoria.Id == produtoTemporario.CategoriaID);
-                produto.Fornecedor = database.Fornecedores.First (fornecedor => fornecedor.Id == produtoTemporario.FornecedorID);
-                produto.PrecoDeCusto = produtoTemporario.PrecoDeCusto;
-                produto.PrecoDeVenda = produtoTemporario.PrecoDeVenda;
+                produto.Categoria = database.Categorias.First(categoria => categoria.Id == produtoTemporario.CategoriaID);
+                produto.Fornecedor = database.Fornecedores.First(fornecedor => fornecedor.Id == produtoTemporario.FornecedorID);
+                produto.PrecoDeCusto = float.Parse(produtoTemporario.PrecoDeCustoString, CultureInfo.InvariantCulture.NumberFormat);
+                produto.PrecoDeVenda = float.Parse(produtoTemporario.PrecoDeVendaString, CultureInfo.InvariantCulture.NumberFormat);
                 produto.Medicao = produtoTemporario.Medicao;
                 produto.Status = true;
-                database.Produtos.Add (produto);
-                database.SaveChanges ();
-                return RedirectToAction ("Produtos", "Gestao");
-            } else {
-                ViewBag.Categorias = database.Categorias.ToList (); /*Se der errado retorna a lista de fornecedores e categorias para o formulário*/
-                ViewBag.Fornecedores = database.Fornecedores.ToList ();
-                return View ("../Gestao/NovoProduto");
+                database.Produtos.Add(produto);
+                database.SaveChanges();
+                return RedirectToAction("Produtos", "Gestao");
+            }
+            else
+            {
+                ViewBag.Categorias = database.Categorias.ToList();
+                ViewBag.Fornecedores = database.Fornecedores.ToList();
+                return View("../Gestao/NovoProduto");
             }
         }
 
