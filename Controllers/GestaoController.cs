@@ -92,7 +92,8 @@ namespace sonmarket.Controllers {
 
         public IActionResult Estoque()
         {
-            return View();
+            var listaDeEstoque = database.Estoques.Include(e => e.Produto).ToList();
+            return View(listaDeEstoque);
         }
 
         public IActionResult NovoEstoque()
