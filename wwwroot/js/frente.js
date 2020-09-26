@@ -99,3 +99,26 @@ $("#pesquisar").click(function() {
         alert("Produto inválido");
     });
 });
+
+/* Finalização de venda */
+$("#finalizarVendaBTN").click(function () {
+    if (__totalVenda__ <= 0) {
+        alert("Compra inválida, nenhum produto adicionado!");
+        return;
+    }
+    var _valorPago = $("#valorPago").val();
+    console.log(typeof _valorPago);
+    if (!isNaN(_valorPago)) {
+        _valorPago = parseFloat(_valorPago);
+        if (_valorPago >= __totalVenda__) {
+            console.log(_valorPago);
+
+        } else {
+            alert("Valor pago é muito baixo!");
+            return;
+        }
+    } else {
+        alert("Valor pago, inválido!");
+        return;
+    }
+});
