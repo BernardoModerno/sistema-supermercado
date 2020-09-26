@@ -2,8 +2,17 @@
 var enderecoProduto = "https://localhost:5001/Produtos/Produto/"
 var produto;
 var compra = [];
+var __totalVenda__ = 0.0;
+
+/* Inicio */
+
+atualizarTotal();
 
 /*Funções*/
+function atualizarTotal() {
+    $("#totalVenda").html(__totalVenda__);
+}
+
 function preencherFormulario(dadosProduto) {
     $("#campoNome").val(dadosProduto.nome);
     $("#campoCategoria").val(dadosProduto.categoria.nome);
@@ -37,7 +46,13 @@ function adicionarNaTabela(p,q) {
 
     Object.assign(produtoTemp, produto); /*Clonando objeto produto*/
 
-    compra.push(produtoTemp); /*Compra é a lista de produtos adicionado */
+    var venda = { produto: produtoTemp, quantidade: q, subtotal: produtoTemp.precoDeVenda * q };
+
+    __totalVenda__ += venda.subtotal;
+
+    atualizarTotal();
+
+    compra.push(venda); /*Compra é a lista de produtos adicionado */
 
     $("#compras").append(`<tr>
         <td>${p.id}</td>
