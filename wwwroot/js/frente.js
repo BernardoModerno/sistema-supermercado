@@ -6,6 +6,8 @@ var __totalVenda__ = 0.0;
 
 /* Inicio */
 
+$("#posvenda").hide();
+
 atualizarTotal();
 
 /*Funções*/
@@ -111,6 +113,10 @@ $("#finalizarVendaBTN").click(function () {
     if (!isNaN(_valorPago)) {
         _valorPago = parseFloat(_valorPago);
         if (_valorPago >= __totalVenda__) {
+            
+            $("#posvenda").show();
+            $("#prevenda").hide();
+            $("#valorPago").prop("disabled", true);
             
             var _troco = _valorPago - __totalVenda__;
             $("#troco").val(_troco);
