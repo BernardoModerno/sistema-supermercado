@@ -117,7 +117,7 @@ $("#finalizarVendaBTN").click(function () {
             $("#posvenda").show();
             $("#prevenda").hide();
             $("#valorPago").prop("disabled", true);
-            
+
             var _troco = _valorPago - __totalVenda__;
             $("#troco").val(_troco);
 
@@ -130,3 +130,15 @@ $("#finalizarVendaBTN").click(function () {
         return;
     }
 });
+
+function restaurarModal() {
+    $("#posvenda").hide();
+    $("#prevenda").show();
+    $("#valorPago").prop("disabled", false);
+    $("#troco").val("");
+    $("#valorPago").val("");
+}
+
+$("#fecharModal").click(function () {
+    restaurarModal();
+})
