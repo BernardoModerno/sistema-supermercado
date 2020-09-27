@@ -111,7 +111,9 @@ $("#finalizarVendaBTN").click(function () {
     if (!isNaN(_valorPago)) {
         _valorPago = parseFloat(_valorPago);
         if (_valorPago >= __totalVenda__) {
-            console.log(_valorPago);
+            
+            var _troco = _valorPago - __totalVenda__;
+            $("#troco").val(_troco);
 
         } else {
             alert("Valor pago é muito baixo!");
