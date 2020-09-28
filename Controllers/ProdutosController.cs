@@ -69,6 +69,16 @@ namespace sonmarket.Controllers {
             if(id > 0)
             {
                 var produto = database.Produtos.Where(p => p.Status == true).Include(p => p.Categoria).Include(p => p.Fornecedor).First(p => p.Id == id);
+
+                if (produto != null)
+                {
+                    var estoque = database.Estoques.First(e => e.Produto.Id == produto.Id);
+                    if (estoque == null)
+                    {
+                        produto = null;
+                    }
+                }
+                
                 if(produto != null)
                 {
                     Response.StatusCode = 200;
