@@ -63,10 +63,11 @@ namespace sonmarket.Controllers {
             }
             return RedirectToAction ("Produtos", "Gestao");
         }
+        
         [HttpPost]
         public IActionResult Produto(int id)
         {
-            if(id > 0)
+            if (id > 0)
             {
                 var produto = database.Produtos.Where(p => p.Status == true).Include(p => p.Categoria).Include(p => p.Fornecedor).First(p => p.Id == id);
 
@@ -78,22 +79,39 @@ namespace sonmarket.Controllers {
                         produto = null;
                     }
                 }
-                
-                if(produto != null)
+
+                if (produto != null)
                 {
-                    Response.StatusCode = 200;
+
+                    Promocao promocao;
+                    try
+                    {
+                        promocao = database.Promocoes.First(p => p.Produto.Id == produto.Id && p.Status == true);
+                    }
+                    catch (Exception e)
+                    {
+                        promocao = null;
+                    }
+
+                    if (promocao != null)
+                    {
+                        produto.PrecoDeVenda -= (produto.PrecoDeVenda * (promocao.Porcentagem / 100));
+                    }
+
+                    Response.StatusCode = 200; //OK
                     return Json(produto);
-                }else
+                }
+                else
                 {
-                    Response.StatusCode = 404;
+                    Response.StatusCode = 404; // Falha
                     return Json(null);
                 }
-            }else
+            }
+            else
             {
-                Response.StatusCode = 404;
+                Response.StatusCode = 404; // Falha
                 return Json(null);
             }
-            
         }
 
     }
