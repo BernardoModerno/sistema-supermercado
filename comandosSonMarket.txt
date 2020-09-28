@@ -10,3 +10,5 @@ dotnet ef migrations add AtualizarCategoria
 dotnet ef database update
 dotnet ef migrations add AtualizandoFornecedor
 dotnet ef database update
+dotnet ef migrations add ModificandoVenda
+dotnet ef database update
