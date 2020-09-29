@@ -114,5 +114,18 @@ namespace sonmarket.Controllers {
             }
         }
 
+        [HttpPost]
+        public IActionResult GerarVenda([FromBody] SaidaDTO[] dados)
+        {
+            return Ok();
+        }
+
+        public class SaidaDTO
+        {
+            public int produto;
+            public int quantidade;
+            public float subtotal;
+        }
+
     }
 }
