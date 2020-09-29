@@ -117,7 +117,7 @@ namespace sonmarket.Controllers {
         [HttpPost]
         public IActionResult GerarVenda([FromBody] SaidaDTO[] dados)
         {
-            return Ok();
+            return Ok(dados);
         }
 
         public class SaidaDTO

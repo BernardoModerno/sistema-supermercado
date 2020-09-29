@@ -1,5 +1,6 @@
 /*declaração de variáveis*/ 
-var enderecoProduto = "https://localhost:5001/Produtos/Produto/"
+var enderecoProduto = "https://localhost:5001/Produtos/Produto/";
+var enderecoGerarVenda = "https://localhost:5001/Produtos/gerarvenda";
 var produto;
 var compra = [];
 var __totalVenda__ = 0.0;
@@ -113,10 +114,13 @@ $("#finalizarVendaBTN").click(function () {
     if (!isNaN(_valorPago)) {
         _valorPago = parseFloat(_valorPago);
         if (_valorPago >= __totalVenda__) {
-            
+
             $("#posvenda").show();
             $("#prevenda").hide();
             $("#valorPago").prop("disabled", true);
+
+            var _troco = _valorPago - __totalVenda__;
+            $("#troco").val(_troco); 
 
             var _troco = _valorPago - __totalVenda__;
             $("#troco").val(_troco);
@@ -125,9 +129,21 @@ $("#finalizarVendaBTN").click(function () {
 
             compra.forEach(elemento => {
                 elemento.produto = elemento.produto.id;
-            })
+            });
 
             // Enviar dados para o backend
+
+            $.ajax({
+                type: "POST",
+                url: "enderecoGerarVenda",
+                dataType: "json",
+                contentType: "application/json",
+                data: JSON.stringify(compra),
+                success: function (data){
+                    console.log("Dados enviados com sucesso");
+                    console.log(data);
+                }
+            });
 
 
 
