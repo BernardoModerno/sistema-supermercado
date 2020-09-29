@@ -121,6 +121,16 @@ $("#finalizarVendaBTN").click(function () {
             var _troco = _valorPago - __totalVenda__;
             $("#troco").val(_troco);
 
+            // Precossar o meu array de compra
+
+            compra.forEach(elemento => {
+                elemento.produto = elemento.produto.id;
+            })
+
+            // Enviar dados para o backend
+
+
+
         } else {
             alert("Valor pago é muito baixo!");
             return;
