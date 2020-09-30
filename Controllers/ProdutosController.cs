@@ -117,7 +117,16 @@ namespace sonmarket.Controllers {
         [HttpPost]
         public IActionResult GerarVenda([FromBody] VendaDTO dados)
         {
-            return Ok(dados);
+            // Gerando Venda
+            Venda venda = new Venda();
+            venda.Total = dados.total;
+            venda.Troco = dados.troco;
+            venda.ValorPago = dados.troco <= 0.01f ? dados.total : dados.total + dados.troco;
+            venda.Data = DateTime.Now;
+            database.Vendas.Add(venda);
+            database.SaveChanges();
+
+            return Ok(new{msg="Venda processada com sucesso"});
         }
 
         public class SaidaDTO
