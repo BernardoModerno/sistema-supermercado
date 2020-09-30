@@ -125,20 +125,23 @@ $("#finalizarVendaBTN").click(function () {
             var _troco = _valorPago - __totalVenda__;
             $("#troco").val(_troco);
 
-            // Precossar o meu array de compra
+            // Processar o meu array de compra
 
             compra.forEach(elemento => {
                 elemento.produto = elemento.produto.id;
             });
 
+            // Preparar um novo objeto
+            var _venda = {total: __totalVenda__, troco: _troco, produtos: compra};
+
             // Enviar dados para o backend
 
             $.ajax({
                 type: "POST",
-                url: "enderecoGerarVenda",
+                url: enderecoGerarVenda,
                 dataType: "json",
                 contentType: "application/json",
-                data: JSON.stringify(compra),
+                data: JSON.stringify(_venda),
                 success: function (data){
                     console.log("Dados enviados com sucesso");
                     console.log(data);
