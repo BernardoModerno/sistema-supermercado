@@ -1937,6 +1937,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\sonmarket\\Views\\Gestao\\Vendas.cshtml",
+      "TargetPath": "Views\\Gestao\\Vendas.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\sonmarket\\Views\\Gestao\\Promocoes.cshtml",
       "TargetPath": "Views\\Gestao\\Promocoes.cshtml",
       "FileKind": "mvc"

@@ -106,5 +106,11 @@ namespace sonmarket.Controllers {
         {
             return Content("");
         }
+
+        public IActionResult Vendas()
+        {
+            var listaDeVendas = database.Vendas.ToList();
+            return View(listaDeVendas);
+        }
     }
 }

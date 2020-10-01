@@ -46,3 +46,4 @@ C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\Promocoes.g.cshtml.cs
 C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\EditarPromocao.g.cshtml.cs
 C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\Estoque.g.cshtml.cs
 C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\NovoEstoque.g.cshtml.cs
+C:\sonmarket\obj\Debug\netcoreapp2.2\Razor\Views\Gestao\Vendas.g.cshtml.cs
