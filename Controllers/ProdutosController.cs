@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
@@ -118,13 +119,28 @@ namespace sonmarket.Controllers {
         public IActionResult GerarVenda([FromBody] VendaDTO dados)
         {
             // Gerando Venda
-            Venda venda = new Venda();
-            venda.Total = dados.total;
-            venda.Troco = dados.troco;
-            venda.ValorPago = dados.troco <= 0.01f ? dados.total : dados.total + dados.troco;
-            venda.Data = DateTime.Now;
-            database.Vendas.Add(venda);
-            database.SaveChanges();
+                Venda venda = new Venda();
+                venda.Total = dados.total;
+                venda.Troco = dados.troco;
+                venda.ValorPago = dados.troco <= 0.01f ? dados.total : dados.total + dados.troco;
+                venda.Data = DateTime.Now;
+                database.Vendas.Add(venda);
+                database.SaveChanges();
+            // Registrar Saídas
+            List<Saida> saidas = new List<Saida>();
+                foreach(var saida in dados.produtos)
+                {
+                    Saida s = new Saida();
+                    s.Quantidade = saida.quantidade;
+                    s.ValorDaVenda = saida.subtotal;
+                    s.Venda = venda;
+                    s.Produto = database.Produtos.First(p => p.Id == saida.produto);
+                    s.Data = DateTime.Now;
+                    saidas.Add(s);
+                }
+                // Salvar no banco
+                database.AddRange(saidas);
+                database.SaveChanges();
 
             return Ok(new{msg="Venda processada com sucesso"});
         }
