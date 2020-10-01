@@ -112,5 +112,12 @@ namespace sonmarket.Controllers {
             var listaDeVendas = database.Vendas.ToList();
             return View(listaDeVendas);
         }
+
+        [HttpPost]
+        public IActionResult RelatorioDeVendas()
+        {
+            return Ok(database.Vendas.ToList());
+        }
+        
     }
 }
